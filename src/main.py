@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from database import db_helper
 from settings.config import settings
 
-from football import router as football_router
+from football.router import router as football_router
 
 
 @asynccontextmanager
