@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      dockerfile: "./Dockerfile"
+      context: ./
+    container_name: web
+    environment:
+      APP_CONFIG__DB__URL: "postgresql+asyncpg://user:password@pg:5432/football"
+    ports:
+      - "5050:8000"
+    depends_on:
+      - pg
+
+  pg:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: user
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5440:5432"
