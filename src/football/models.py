@@ -71,6 +71,7 @@ class Prediction(Base):
     # Связь
     match: Mapped["Match"] = relationship(back_populates="predictions")
 
+
 # class Prediction(Base):
 #
 #     id: Mapped[int] = mapped_column(primary_key=True)
